@@ -264,4 +264,11 @@ SILENCED_SYSTEM_CHECKS = [
     '1_6.W002'
 ]
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
 THUMBNAIL_DEBUG = False
