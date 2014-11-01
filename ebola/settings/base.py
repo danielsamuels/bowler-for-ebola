@@ -128,6 +128,7 @@ INSTALLED_APPS = (
 
     "ebola.apps.site",
 
+    "sorl.thumbnail",
     'django_extensions',
 )
 

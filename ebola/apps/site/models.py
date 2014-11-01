@@ -1,27 +1,29 @@
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.urlresolvers import reverse
 from django.db import models
 
 import cv2
-import os
 from PIL import Image as PILImage
 import StringIO
 from sorl.thumbnail import ImageField
 import uuid
 
 
+def upload_path(instance, filename):
+    return 'uploads/files/{}.{}'.format(
+        instance.uuid,
+        filename.split('.')[-1]
+    )
+
+
+def processed_upload_path(instance, filename):
+    return 'uploads/files/{}_processed.{}'.format(
+        instance.uuid,
+        filename.split('.')[-1]
+    )
+
+
 class Image(models.Model):
-
-    def upload_path(instance, filename):
-        return 'uploads/files/{}.{}'.format(
-            instance.uuid,
-            filename.split('.')[-1]
-        )
-
-    def processed_upload_path(instance, filename):
-        return 'uploads/files/{}_processed.{}'.format(
-            instance.uuid,
-            filename.split('.')[-1]
-        )
 
     uuid = models.CharField(
         max_length=36,
@@ -38,6 +40,11 @@ class Image(models.Model):
         blank=True,
         null=True,
     )
+
+    def get_absolute_url(self):
+        return reverse('image:detail', kwargs={
+            'uuid': str(self.uuid)
+        })
 
     def save(self, *args, **kwargs):
         # Save the object.

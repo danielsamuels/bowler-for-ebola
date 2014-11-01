@@ -19,6 +19,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
+THUMBNAIL_DEBUG = DEBUG
+
 
 # Save media files to the user's Sites folder.
 

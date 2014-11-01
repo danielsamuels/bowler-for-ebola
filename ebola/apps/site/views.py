@@ -1,9 +1,14 @@
 from django.views.generic import CreateView, DetailView
 
+from .models import Image
+
 
 class ImageCreate(CreateView):
-    pass
+    model = Image
+    fields = ['image']
 
 
 class ImageDetail(DetailView):
-    pass
+    model = Image
+    slug_field = 'uuid'
+    slug_url_kwarg = 'uuid'

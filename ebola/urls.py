@@ -13,7 +13,7 @@ urlpatterns = patterns(
     # Admin URLs.
     url(r"^admin/", include(admin.site.urls)),
 
-    url(r"^", include('ebola.apps.site.urls')),
+    url(r"^", include('ebola.apps.site.urls', namespace="image")),
 
     # There's no favicon here!
     url(r"^favicon.ico$", generic.RedirectView.as_view()),
