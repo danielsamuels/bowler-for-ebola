@@ -1,2 +1,6 @@
 {% load thumbnail %}
-<img src="{% thumbnail image.processed.file '800x600' %}">
+{% if image.processed %}
+    <img src="{% thumbnail image.processed.file '800x600' %}">
+{% else %}
+    <p>Unable to find a face, sorry. :(</p>
+{% endif %}
