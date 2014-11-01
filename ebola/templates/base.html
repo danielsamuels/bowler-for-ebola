@@ -10,7 +10,7 @@
     <meta property="og:description" content="I'm helping to raise awareness for Ebola by putting a bowler hat on my head!" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% with favicon_url='http://'|add:request.META.HTTP_HOST|add:'/static/img/favicon.png' %}
-        <meta property="og:image" content="{% block og_image %}{% thumbnail favicon_url '512x512' format='PNG' %}{% endblock %}" />
+        <meta property="og:image" content="{% block og_image %}http://{{ request.META.HTTP_HOST }}{% thumbnail favicon_url '512x512' format='PNG' %}{% endblock %}" />
         <link rel="icon" type="image/png" href="{% thumbnail favicon_url '512x512' format='PNG' %}">
     {% endwith %}
 </head>
