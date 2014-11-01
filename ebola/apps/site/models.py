@@ -58,7 +58,7 @@ class Image(models.Model):
             pil_hat = PILImage.open('ebola/static/img/bowler.png')
 
             cascade = cv2.CascadeClassifier('ebola/static/other/lbpcascade_frontalface.xml')
-            faces = cascade.detectMultiScale(face)
+            faces = cascade.detectMultiScale(face, scaleFactor=1.2)
 
             if len(faces) > 0:
                 for (x, y, w, h) in faces:
