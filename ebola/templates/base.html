@@ -10,7 +10,9 @@
     <meta property="og:image" content="{% block og_image %}{% endblock %}" />
     <meta property="og:description" content="I'm helping to raise awareness for Ebola by putting a bowler hat on my head!" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="{% thumbnail 'static/img/favicon.png' '512x512' %}">
+    {% with favicon_url='http://'|add:request.META.HTTP_HOST|add:'/static/img/favicon.png' %}
+        <link rel="icon" type="image/png" href="{% thumbnail favicon_url '512x512' format='PNG' %}">
+    {% endwith %}
 </head>
 <body>
 <div id="fb-root"></div>
