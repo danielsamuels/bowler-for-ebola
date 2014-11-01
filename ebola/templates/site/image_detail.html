@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load thumbnail %}
 
-{% block og_image %}<meta property="og:image" content="http://{{ request.META.HTTP_HOST }}{% if image.processed %}{% thumbnail image.processed.file '928' %}{% else %}{% thumbnail image.image.file '928' %}{% endif %}" />{% endblock %}
+{% block og_image %}{% spaceless %}
+    http://{{ request.META.HTTP_HOST }}{% if image.processed %}{% thumbnail image.processed.file '928' %}{% else %}{% thumbnail image.image.file '928' %}{% endif %}
+{% endspaceless %}{% endblock %}
 
 {% block content %}
     <p>
