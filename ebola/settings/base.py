@@ -262,3 +262,5 @@ SILENCED_SYSTEM_CHECKS = [
     '1_6.W001',
     '1_6.W002'
 ]
+
+THUMBNAIL_DEBUG = False
