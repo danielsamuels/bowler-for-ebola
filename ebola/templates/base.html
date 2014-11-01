@@ -7,7 +7,8 @@
     <meta property="og:title" content="Bowler for Ebola" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://{{ request.META.HTTP_HOST }}{{ request.path }}" />
-    <meta property="og:image" content="{% block og_image %}{% endblock %}" />
+
+    {% block og_image %}{% endblock %}
     <meta property="og:description" content="I'm helping to raise awareness for Ebola by putting a bowler hat on my head!" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% with favicon_url='http://'|add:request.META.HTTP_HOST|add:'/static/img/favicon.png' %}
