@@ -27,6 +27,7 @@ def processed_upload_path(instance, filename):
 class Image(models.Model):
 
     uuid = models.CharField(
+        "UUID",
         max_length=36,
         primary_key=True,
         default=uuid.uuid4
@@ -43,6 +44,7 @@ class Image(models.Model):
     )
 
     ip_address = models.GenericIPAddressField(
+        "IP address",
         blank=True,
         null=True,
     )
@@ -99,3 +101,6 @@ class Image(models.Model):
 
                 self.processed = thumb_file
                 self.save()
+
+    class Meta:
+        ordering = ('-timestamp',)
