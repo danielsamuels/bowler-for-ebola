@@ -6,10 +6,19 @@
 {% endspaceless %}{% endblock %}
 
 {% block content %}
+    <p>
+        <strong>Want to help?</strong> Share this page and/or donate to one of the organisations helping those in need.
+
+        <br>
+
+        <a target="_blank" href="http://www.doctorswithoutborders.org/our-work/medical-issues/ebola">Doctors Without Borders</a> /
+        <a target="_blank" href="http://www.redcross.org.uk/en/About-us">British Red Cross</a> /
+        <a target="_blank" href="http://www.unicef.org.uk/UNICEFs-Work/Emergencies/ebola-west-africa-crisis/">Unicef</a>
+    </p>
     {% if image.processed %}
         <img src="{% thumbnail image.processed.file '928' %}">
     {% else %}
-        <p>Unable to find a face, sorry. :(</p>
+        <p>Unable to find a face, sorry. <a href="/">Try another image.</a></p>
         <img src="{% thumbnail image.image.file '928' %}">
     {% endif %}
 {% endblock %}

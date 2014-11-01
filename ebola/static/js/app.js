@@ -21,7 +21,7 @@ $(function () {
         },
         dataType: 'json',
         done: function (e, data) {
-            // window.location = data.result.url;
+            window.location = data.result.url;
         }
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
