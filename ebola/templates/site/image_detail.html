@@ -3,4 +3,5 @@
     <img src="{% thumbnail image.processed.file '800x600' %}">
 {% else %}
     <p>Unable to find a face, sorry. :(</p>
+    <img src="{% thumbnail image.image.file '800x600' %}">
 {% endif %}
