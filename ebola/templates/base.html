@@ -1,3 +1,4 @@
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,33 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://{{ request.META.HTTP_HOST }}{{ request.path }}" />
     <meta property="og:image" content="{% block og_image %}{% endblock %}" />
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
+    {% compress "css" %}
+    <link rel="stylesheet" href="/static/css/screen.css">
+    {% endcompress %}
 </head>
 <body>
-    {% block content %}{% endblock %}
+<div class="row">
+    <div class="medium-12 columns medium-centered">
+        <h1><a href="/">Bowler for Ebola</a></h1>
+        <div class="panel radius text-center">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{% compress "js" %}
+<script src="/static/js/dependencies/jquery.ui.widget.js"></script>
+<script src="/static/js/dependencies/jquery.iframe-transport.js"></script>
+<script src="/static/js/dependencies/jquery.cookie.js"></script>
+<script src="/static/js/dependencies/jquery.fileupload.js"></script>
+
+<script src="/static/js/app.js"></script>
+{% endcompress %}
 </body>
 </html>

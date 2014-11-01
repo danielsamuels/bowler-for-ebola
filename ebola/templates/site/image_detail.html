@@ -2,14 +2,14 @@
 {% load thumbnail %}
 
 {% block og_image %}{% spaceless %}
-    http://{{ request.META.HTTP_HOST }}{% if image.processed %}{% thumbnail image.processed.file '800x600' %}{% else %}{% thumbnail image.image.file '800x600' %}{% endif %}
+    http://{{ request.META.HTTP_HOST }}{% if image.processed %}{% thumbnail image.processed.file '928' %}{% else %}{% thumbnail image.image.file '928' %}{% endif %}
 {% endspaceless %}{% endblock %}
 
 {% block content %}
     {% if image.processed %}
-        <img src="{% thumbnail image.processed.file '800x600' %}">
+        <img src="{% thumbnail image.processed.file '928' %}">
     {% else %}
         <p>Unable to find a face, sorry. :(</p>
-        <img src="{% thumbnail image.image.file '800x600' %}">
+        <img src="{% thumbnail image.image.file '928' %}">
     {% endif %}
 {% endblock %}

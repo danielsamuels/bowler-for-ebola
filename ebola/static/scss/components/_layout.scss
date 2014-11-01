@@ -1,0 +1,27 @@
+body {
+    background-color: $body-font-color;
+}
+
+h1 a {
+    color: $header-font-color;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+.upload-icon {
+    font-size: 365px;
+    position: relative;
+    width: 100%;
+}
+
+
+input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

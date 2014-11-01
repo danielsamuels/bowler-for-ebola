@@ -3,7 +3,11 @@
 {% block content %}
 <form enctype="multipart/form-data" action="" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit">
+
+    <i class="fa fa-cloud-upload upload-icon">
+        {{ form.image }}
+    </i>
+
+    <p>Drag and drop your image onto the page, or click the upload icon above.</p>
 </form>
 {% endblock %}
