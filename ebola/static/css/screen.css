@@ -3712,3 +3712,20 @@ input[type="file"] {
   margin-left: 2px;
   margin-bottom: 20px;
 }
+
+/* line 56, ../scss/components/_layout.scss */
+.social {
+  float: left;
+  width: 100%;
+}
+
+/* line 61, ../scss/components/_layout.scss */
+.social > * {
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 66, ../scss/components/_layout.scss */
+.fb_iframe_widget iframe {
+  top: -7px;
+}

@@ -52,3 +52,17 @@ input[type="file"] {
     margin-left: 2px;
     margin-bottom: 20px;
 }
+
+.social {
+    float: left;
+    width: 100%;
+}
+
+.social > * {
+    float: left;
+    margin-right: 20px;
+}
+
+.fb_iframe_widget iframe {
+    top: -7px;
+}
