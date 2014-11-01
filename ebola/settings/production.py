@@ -11,3 +11,5 @@ INSTALLED_APPS += (
 RAVEN_CONFIG = {
     'dsn': 'https://bbe540f965174d2da70ffacd097c59db:6345ee5cc988477489f817f54eed054e@app.getsentry.com/32482',
 }
+
+SERVER_IP = '178.62.96.52'
