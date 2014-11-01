@@ -4,6 +4,7 @@ Werkzeug==0.9.6
 django-appconf==0.6
 django-compressor==1.4
 django-extensions==1.4.5
+django-ipware==0.1.0
 django-suit==0.2.11
 django-suit-redactor==0.0.2
 numpy==1.9.0

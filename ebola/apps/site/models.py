@@ -1,6 +1,7 @@
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.timezone import now
 
 import cv2
 from PIL import Image as PILImage
@@ -39,6 +40,16 @@ class Image(models.Model):
         upload_to=processed_upload_path,
         blank=True,
         null=True,
+    )
+
+    ip_address = models.GenericIPAddressField(
+        blank=True,
+        null=True,
+    )
+
+    timestamp = models.DateTimeField(
+        auto_now_add=True,
+        default=now
     )
 
     def get_absolute_url(self):
