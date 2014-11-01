@@ -3666,12 +3666,18 @@ h1 a:hover {
 
 /* line 13, ../scss/components/_layout.scss */
 .upload-icon {
-  font-size: 365px;
+  font-size: 265px;
   position: relative;
   width: 100%;
 }
+@media only screen and (min-width: 40.063em) {
+  /* line 13, ../scss/components/_layout.scss */
+  .upload-icon {
+    font-size: 365px;
+  }
+}
 
-/* line 20, ../scss/components/_layout.scss */
+/* line 26, ../scss/components/_layout.scss */
 input[type="file"] {
   position: absolute;
   opacity: 0;
@@ -3679,4 +3685,16 @@ input[type="file"] {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+/* line 35, ../scss/components/_layout.scss */
+.heading {
+  margin-top: 20px;
+}
+
+/* line 39, ../scss/components/_layout.scss */
+.subheading {
+  margin-top: -16px;
+  margin-left: 2px;
+  margin-bottom: 20px;
 }

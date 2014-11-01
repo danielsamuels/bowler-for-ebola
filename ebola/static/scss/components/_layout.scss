@@ -11,7 +11,13 @@ h1 a {
 }
 
 .upload-icon {
-    font-size: 365px;
+    font-size: 265px;
+
+    @media #{$medium-up} {
+        font-size: 365px;
+    }
+
+
     position: relative;
     width: 100%;
 }
@@ -24,4 +30,14 @@ input[type="file"] {
     left: 0;
     bottom: 0;
     right: 0;
+}
+
+.heading {
+    margin-top: 20px;
+}
+
+.subheading {
+    margin-top: -16px;
+    margin-left: 2px;
+    margin-bottom: 20px;
 }

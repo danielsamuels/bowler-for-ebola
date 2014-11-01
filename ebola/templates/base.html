@@ -8,23 +8,26 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://{{ request.META.HTTP_HOST }}{{ request.path }}" />
     <meta property="og:image" content="{% block og_image %}{% endblock %}" />
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
-
-    {% compress css %}
-    <link rel="stylesheet" href="/static/css/screen.css">
-    {% endcompress %}
+    <meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="row">
     <div class="medium-12 columns medium-centered">
-        <h1><a href="/">Bowler for Ebola</a></h1>
+        <h1 class="heading"><a href="/">Bowler for Ebola</a></h1>
+        <h4 class="subheading">Helping to raise awareness of Ebola.</h4>
         <div class="panel radius text-center">
             {% block content %}{% endblock %}
         </div>
     </div>
 </div>
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
+{% compress css %}
+<link rel="stylesheet" href="/static/css/screen.css">
+{% endcompress %}
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
