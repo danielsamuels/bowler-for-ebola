@@ -16,7 +16,7 @@ urlpatterns = patterns(
     url(r"^", include('ebola.apps.site.urls', namespace="image")),
 
     # There's no favicon here!
-    url(r"^favicon.ico$", generic.RedirectView.as_view()),
+    url(r"^favicon.ico$", generic.RedirectView.as_view(url="/static/img/favicon.ico")),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
