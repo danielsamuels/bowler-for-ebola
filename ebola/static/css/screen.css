@@ -3676,8 +3676,22 @@ h1 a:hover {
     font-size: 365px;
   }
 }
+/* line 20, ../scss/components/_layout.scss */
+.upload-icon.fa-refresh {
+  margin-bottom: 31px;
+  line-height: 1;
+  font-size: 135px;
+}
+@media only screen and (min-width: 40.063em) {
+  /* line 20, ../scss/components/_layout.scss */
+  .upload-icon.fa-refresh {
+    margin-bottom: 33px;
+    line-height: 1.25;
+    font-size: 265px;
+  }
+}
 
-/* line 26, ../scss/components/_layout.scss */
+/* line 37, ../scss/components/_layout.scss */
 input[type="file"] {
   position: absolute;
   opacity: 0;
@@ -3687,12 +3701,12 @@ input[type="file"] {
   right: 0;
 }
 
-/* line 35, ../scss/components/_layout.scss */
+/* line 46, ../scss/components/_layout.scss */
 .heading {
   margin-top: 20px;
 }
 
-/* line 39, ../scss/components/_layout.scss */
+/* line 50, ../scss/components/_layout.scss */
 .subheading {
   margin-top: -16px;
   margin-left: 2px;

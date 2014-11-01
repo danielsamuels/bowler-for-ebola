@@ -17,6 +17,17 @@ h1 a {
         font-size: 365px;
     }
 
+    &.fa-refresh {
+        margin-bottom: 31px;
+        line-height: 1;
+        font-size: 135px;
+
+        @media #{$medium-up} {
+            margin-bottom: 33px;
+            line-height: 1.25;
+            font-size: 265px;
+        }
+    }
 
     position: relative;
     width: 100%;

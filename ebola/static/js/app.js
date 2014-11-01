@@ -16,17 +16,12 @@ $(function () {
             if (!csrfSafeMethod(settings.type)) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken);
             }
+
+            $('.upload-icon').removeClass('fa-cloud-upload').addClass('fa-refresh fa-spin');
         },
         dataType: 'json',
         done: function (e, data) {
-            window.location = data.result.url;
-        },
-        progressall: function (e, data) {
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            $('#progress .progress-bar').css(
-                'width',
-                progress + '%'
-            );
+            // window.location = data.result.url;
         }
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
