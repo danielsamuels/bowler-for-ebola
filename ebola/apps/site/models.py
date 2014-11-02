@@ -71,9 +71,8 @@ class Image(models.Model):
             orientation_key = ExifTags.TAGS.keys()[ExifTags.TAGS.values().index('Orientation')]
 
             if exif_data is not None:
-                orientation = exif_data[orientation_key]
+                orientation = exif_data.get(orientation_key, 0)
 
-                print orientation
                 if orientation == 3:
                     pil_face = pil_face.transpose(PILImage.ROTATE_180)
                 elif orientation == 6:
