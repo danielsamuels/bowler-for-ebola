@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.timezone import now
 
 import cv2
-from PIL import Image as PILImage
+from PIL import Image as PILImage, ExifTags
 import StringIO
 from sorl.thumbnail import ImageField
 import uuid
@@ -62,6 +62,26 @@ class Image(models.Model):
     def save(self, *args, **kwargs):
         # Save the object.
         super(Image, self).save(*args, **kwargs)
+
+        # Run EXIF processing.
+        pil_face = PILImage.open(self.image.file.file.name)
+
+        if hasattr(pil_face, '_getexif'):
+            exif_data = pil_face._getexif()
+            orientation_key = ExifTags.TAGS.keys()[ExifTags.TAGS.values().index('Orientation')]
+
+            if exif_data is not None:
+                orientation = exif_data[orientation_key]
+
+                print orientation
+                if orientation == 3:
+                    pil_face = pil_face.transpose(PILImage.ROTATE_180)
+                elif orientation == 6:
+                    pil_face = pil_face.transpose(PILImage.ROTATE_270)
+                elif orientation == 8:
+                    pil_face = pil_face.transpose(PILImage.ROTATE_90)
+
+                pil_face.save(self.image.file.file.name)
 
         if not self.processed:
             # Run image processing.
