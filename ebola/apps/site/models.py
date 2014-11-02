@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.timezone import now
 
+from caching.base import CachingManager, CachingMixin
 import cv2
 from PIL import Image as PILImage, ExifTags
 import StringIO
@@ -24,7 +25,9 @@ def processed_upload_path(instance, filename):
     )
 
 
-class Image(models.Model):
+class Image(CachingMixin, models.Model):
+
+    objects = CachingManager()
 
     uuid = models.CharField(
         "UUID",
