@@ -8,11 +8,11 @@ $(function () {
     'use strict';
     // Change this to the location of your server-side upload handler:
     var url = '/';
-    var csrftoken = $.cookie('csrftoken');
+    var csrftoken = $('input[name="csrfmiddlewaretoken"]').val();
     $('#id_image').fileupload({
         url: url,
         crossDomain: false,
-        beforeSend: function(xhr, settings) {
+        beforeSend: function (xhr, settings) {
             if (!csrfSafeMethod(settings.type)) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken);
             }
